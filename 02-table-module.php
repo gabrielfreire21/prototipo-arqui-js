@@ -9,7 +9,9 @@
  * Indicado no caso da aplicação ser baseada em uma estrutura orientada a tabelas
  * onde não temos a necessidade de complexos relacionamentos para 
  * representar o modelo conceitual da aplicação.
- * 
+ *
+ * (Oglio, Pablo Dall')
+ *
  */
 
 /**
@@ -82,7 +84,7 @@ final class Produtos
 }
 
 // instancia objeto Produtos
-$produtos = new Produto;
+$produtos = new Produtos;
 
 // adiciona alguns Produtos
 $produtos->adicionar(1, 'Vinho', 10, 15);
