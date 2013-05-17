@@ -2,10 +2,10 @@
 /**
  * 4.3.1 Domain Model Pattern
  * 
- * ..captura as idéias e expressa os conceitos envolvidos na aplicação, bem como
- * os relacionamentos por meio de um conjutno de objetos relaciononados.
+ * ...captura as idéias e expressa os conceitos envolvidos na aplicação, bem como
+ * os relacionamentos por meio de um conjunto de objetos relacionados.
  *
- * São responsáveis por manipular os daos e conter as regras de negócios, geralmente
+ * São responsáveis por manipular os dados e conter as regras de negócios, geralmente
  * tem semelhânça com o modelo de banco de dados.
  *
  * Lembrando:
@@ -21,17 +21,6 @@
  * (Oglio, Pablo Dall')
  *
  */
-
-/**
- *
- *
- *
- *
- *
- *
- *
- */
-
 
 /**
  * class Produto
