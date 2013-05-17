@@ -10,6 +10,8 @@
  * onde não temos a necessidade de complexos relacionamentos para 
  * representar o modelo conceitual da aplicação.
  *
+ * Esse pattern normalmente é utilizado com o pattern table data gateway (../modelo-de-dados/01-table-gateway.php).
+ *
  * (Oglio, Pablo Dall')
  *
  */
