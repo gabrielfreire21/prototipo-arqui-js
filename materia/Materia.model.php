@@ -5,27 +5,28 @@
 /**
  *
  */
-class Materia {
+class MateriaModel {
 
     const PHP      = "php";
     const JS       = "js";
     const HTML_CSS = "html-css";
 
-
+    /**
+     * 
+     * @param type $id
+     */
+    function setId($id){
+        $this->id = $id;
+    }
+    
+    
     /**
      *
      * @param type $id
      */
-    function __construct($id=null) {
-        if($id){
-            $this->id = $id;
-        }
-    }
+    function carregar($id) {
 
-    /**
-     *
-     */
-    function carregar() {
+        $this->setId($id);
 
         $sql = "SELECT * FROM materias WHERE id = {$this->id}";
         $obj = Conn::getConexao()->query($sql)->fetch(PDO::FETCH_OBJ);
@@ -58,11 +59,11 @@ class Materia {
         $sql  = "SELECT * FROM materias $where $orderby";
 
         $stmt = Conn::getConexao()->query($sql);
-        while( $materia = $stmt->fetch(PDO::FETCH_OBJ)  ):
+        while( $materia = $stmt->fetch(PDO::FETCH_OBJ)  ){
 //            $materia->dt_criacao     = $materia->dt_criacao;
 //            $materia->dt_atualizacao = $materia->dt_atualizacao;
             $materias[] = $materia;
-        endwhile;
+        }
 
         return $materias;
 
@@ -193,10 +194,14 @@ class Materia {
 /**
  * Teste
  */
-//require "Conn.class.php";
-//$materia = new Materia(7);
-//$materia->carregar();
+//require "../Conn.class.php";
+//$materia = new Materia();
+
+
+//$materia->carregar(6);
 //var_dump($materia);
 
+//$arr_materias = $materia->getObjects();
+//var_dump($arr_materias);
 
 ?>
