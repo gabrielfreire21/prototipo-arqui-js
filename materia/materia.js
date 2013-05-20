@@ -3,38 +3,48 @@ var app = {
     lista: {
         carregar: function() {
             $.post("materia/lista.php", "", function(retorno) {
-                app.elemConteudo.empty().append( retorno );
+                app.elemConteudo.empty().append(retorno);
                 app.form.bindLinks();
             });
         }
-    },// end lista
+    }, // end lista
     form: {
-        carregar: function(id){
+        btnCancelar: {},
+        carregar: function(id) {
             // Update ou insert
-            param = (id) ? "id="+id : "";
-            
+            param = (id) ? "id=" + id : "";
+
             $.post("materia/form.php", param, function(retorno) {
-                app.elemConteudo.empty().append( retorno );                
+                app.elemConteudo.empty().append(retorno);
+                app.form.setBtnCancelar();
+
             });
         },
-        bindLinks: function(){
+        bindLinks: function() {
             // Espara-se que "app.elemConteudo" seja a tabela (lista)
             var tabela = app.elemConteudo,
                 links  = tabela.find('a');
-        
-            links.each(function(){
+
+            links.each(function() {
                 var tr = $(this).parent().parent(),
                     id = tr.attr('id').split("-")[1];
-                
-                $(this).click(function(){
+
+                $(this).click(function() {
                     app.form.carregar(id);
                 });
             });
+        },
+        setBtnCancelar: function() {
+            this.btnCancelar = $('#ctr-acao-cancelar');
+            this.btnCancelar.click(function() {
+                app.lista.carregar();
+            });
+
         }
-    }
-    
-    
-};
+    }// end form
+
+};//end materia
+
 app.lista.carregar();
 
 
