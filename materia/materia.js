@@ -19,9 +19,13 @@ var app = {
         },
         bindLinks: function(){
             // Espara-se que "app.elemConteudo" seja a tabela (lista)
-            var links = app.elemConteudo.find('a');
+            var tabela = app.elemConteudo,
+                links  = tabela.find('a');
+        
             links.each(function(){
-                var id = $(this).siblings().val();
+                var tr = $(this).parent().parent(),
+                    id = tr.attr('id').split("-")[1];
+                
                 $(this).click(function(){
                     app.form.carregar(id);
                 });

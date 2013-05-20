@@ -149,7 +149,6 @@ if(isset($_POST['id'])){
     </div>
     <div class="control-group">
         <div class="controls pull-right">
-            <button type="button" id="ctr-acao-excluir" class="btn-fulia btn btn-danger">Excluir</button>
             <button type="button" id="ctr-acao-cancelar" class="btn-fulia btn">Cancelar</button>
             <button type="button" id="ctr-acao-salvar" class="btn-fulia btn btn-info">Salvar</button>
         </div>
