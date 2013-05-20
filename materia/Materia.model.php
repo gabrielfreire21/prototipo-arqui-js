@@ -10,6 +10,18 @@ class MateriaModel {
     const PHP      = "php";
     const JS       = "js";
     const HTML_CSS = "html-css";
+    
+    public $id;
+    public $url;
+    public $titulo;
+    public $resumo;
+    public $keywords;
+    public $nivel;
+    public $secao;
+    public $autor;
+    public $dt_atualizacao;
+    public $dt_criacao;
+    public $ordem;    
 
     /**
      * 

@@ -11,13 +11,11 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="span12">
-                    <table class="table"></table>
-                </div>
+                <div class="span12" id="conteudo"></div>
             </div>
         </div>
     </body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
     <script src="biblio/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="materia/lista.js" type="text/javascript"></script>
+    <script src="materia/materia.js" type="text/javascript"></script>
 </html>
