@@ -1,6 +1,7 @@
 <?php
-require "../Conn.class.php";
-require "Materia.model.php";
+require "../biblio/classes/Conn.class.php";
+require "../biblio/classes/HTMLcombo.php";
+require "../biblio/models/Materia.model.php";
 
 $objMateria   = new MateriaModel();
 $arr_materias = $objMateria->getObjects();

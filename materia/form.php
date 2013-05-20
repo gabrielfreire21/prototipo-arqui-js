@@ -1,7 +1,7 @@
 <?php
-require "../Conn.class.php";
-require "../biblio/legado/HTMLcombo.php";
-require "Materia.model.php";
+require "../biblio/classes/Conn.class.php";
+require "../biblio/classes/HTMLcombo.php";
+require "../biblio/models/Materia.model.php";
 
 
 /**
