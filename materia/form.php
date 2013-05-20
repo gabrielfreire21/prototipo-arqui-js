@@ -1,5 +1,6 @@
 <?php
 require "../Conn.class.php";
+require "../biblio/legado/HTMLcombo.php";
 require "Materia.model.php";
 
 
@@ -77,10 +78,17 @@ if(isset($_POST['id'])){
         <label class="control-label" for="frm-nivel">Nível</label>
         <div class="controls">
             <select id="frm-nivel">
-                <option value=""></option>
-                <option value="basico">Básico</option>
-                <option value="intermediario">Intermediário</option>
-                <option value="avancado">Avançado</option>
+                <?php
+                $combo = new HTMLcombo();
+                $combo->valor_selecionado = $objMateria->nivel;
+                $arrNivel = array(
+					"" => "",
+                    "basico" => "Básico",
+		    		"intermediario" => "intermediário",
+		    		"avancado" => "Avançado"
+                );
+                echo $combo->getOptions($arrNivel);
+                ?>
             </select>
         </div>
     </div>
@@ -88,10 +96,17 @@ if(isset($_POST['id'])){
         <label class="control-label" for="frm-secao">Seção</label>
         <div class="controls">
             <select id="frm-secao" >
-                <option value=""></option>
-                <option value="php">PHP</option>
-                <option value="js">JS</option>
-                <option value="html-css">HTML & CSS</option>
+                <?php
+                $combo = new HTMLcombo();
+                $combo->valor_selecionado = $objMateria->secao;
+                $arrSecao = array(
+					"" => "",
+                    "php" => "PHP",
+		    		"js" => "JS",
+		    		"html-css" => "HTML & CSS"
+                );
+                echo $combo->getOptions($arrSecao);
+                ?>
             </select>
         </div>
     </div>
@@ -99,10 +114,17 @@ if(isset($_POST['id'])){
         <label class="control-label" for="frm-autor">Autor</label>
         <div class="controls">
             <select id="frm-autor">
-                <option value=""></option>
-                <option value="Flávio">Flávio</option>
-                <option value="Alexandre">Alexandre</option>
-                <option value="Micheletti">Micheletti</option>
+                <?php
+                $combo = new HTMLcombo();
+                $combo->valor_selecionado = $objMateria->autor;
+                $arrSecao = array(
+					"" => "",
+                    "flavio" => "Flávio",
+		    		"alexandre" => "Alexandre",
+		    		"micheletti" => "Micheletti"
+                );
+                echo $combo->getOptions($arrSecao);
+                ?>
             </select>
         </div>
     </div>
