@@ -9,6 +9,7 @@ var app = {
         }
     }, // end lista
     form: {
+        btnSalvar: {},
         btnCancelar: {},
         carregar: function(id) {
             // Update ou insert
@@ -16,8 +17,8 @@ var app = {
 
             $.post("materia/form.php", param, function(retorno) {
                 app.elemConteudo.empty().append(retorno);
+                app.form.setBtnSalvar();
                 app.form.setBtnCancelar();
-
             });
         },
         bindLinks: function() {
@@ -34,12 +35,49 @@ var app = {
                 });
             });
         },
+        getMateria: function(){
+            var materia = {};
+
+            materia.id             = $("#frm-id").val();
+            materia.url            = $("#frm-url").val();
+            materia.titulo         = $("#frm-titulo").val();
+            materia.resumo         = $("#frm-resumo").val();
+            materia.keywords       = $("#frm-keywords").val();
+            materia.nivel          = $("#frm-nivel").val();
+            materia.secao          = $("#frm-secao").val();
+            materia.autor          = $("#frm-autor").val();
+            materia.dt_criacao     = $("#frm-dt-criacao").val();
+            materia.dt_atualizacao = $("#frm-dt-atualizacao").val();
+            materia.ordem          = $("#frm-ordem").val();
+
+            return materia;
+        },        
+        setBtnSalvar: function() {
+            this.btnSalvar = $('#ctr-acao-salvar');
+            this.btnSalvar.click(function() {
+                var strJsonMateria = JSON.stringify( app.form.getMateria() );
+                
+                $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
+                    //var resp = JSON.parse(resp);
+                    console.log(resp)
+
+//                    if( resp.lastInsertId){
+//                        
+//                    } else {
+//                        if( resp.erro != undefined){
+//                            ctrMsgErro.mostrar(resp.erro);
+//                        } else {
+//                            ctrMsgErro.mostrar("ERRO:"+resp);
+//                        }
+//                    }
+                });
+            });
+        },
         setBtnCancelar: function() {
             this.btnCancelar = $('#ctr-acao-cancelar');
             this.btnCancelar.click(function() {
                 app.lista.carregar();
             });
-
         }
     }// end form
 
