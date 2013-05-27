@@ -27,7 +27,7 @@ $arr_materias = $objMateria->getObjects();
         <td><?php echo $materia->autor ?></td>
         <td><?php echo $materia->secao ?></td>
         <td><?php echo $materia->dt_atualizacao ?></td>
-        <td><button type="button" id="ctr-acao-excluir" class="btn-fulia btn btn-danger btn-mini" >Excluir</button></td>
+        <td><button type="button" class="btn-fulia btn btn-danger btn-mini" >Excluir</button></td>
     </tr>
 <?php endforeach; ?>
 </table>

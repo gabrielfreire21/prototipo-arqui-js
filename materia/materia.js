@@ -4,11 +4,12 @@ var app = {
         carregar: function() {
             $.post("materia/lista.php", "", function(retorno) {
                 app.elemConteudo.empty().append(retorno);
-                app.lista.bindLinks();
+                app.lista.linksForm();
+                app.lista.linksDel();
             });
         },
-        bindLinks: function() {
-            // Espara-se que "app.elemConteudo" seja a tabela (lista)
+        linksForm: function() {
+            // Espera-se que "app.elemConteudo" seja a tabela (lista)
             var tabela = app.elemConteudo,
                 links  = tabela.find('a');
 
@@ -20,7 +21,25 @@ var app = {
                     app.form.carregar(id);
                 });
             });
-        }                
+        },
+        linksDel: function() {
+            // Espera-se que "app.elemConteudo" seja a tabela (lista)
+            var tabela = app.elemConteudo,
+                links  = tabela.find('button');
+
+            links.each(function() {
+                var tr = $(this).parent().parent(),
+                    id = tr.attr('id').split("-")[1];
+
+                $(this).click(function() {
+                    var strJsonMateria = '{"id":"'+id+'"}';
+ 
+                    $.post("materia/crud.php", "ac=delete&materia="+strJsonMateria, function(resp){
+                        app.lista.carregar();
+                    });
+                });
+            });
+        }
     }, // end lista
     form: {
         btnSalvar: {},
@@ -51,18 +70,18 @@ var app = {
             materia.ordem          = $("#frm-ordem").val();
 
             return materia;
-        },        
+        },
         setBtnSalvar: function() {
             this.btnSalvar = $('#ctr-acao-salvar');
             this.btnSalvar.click(function() {
                 var strJsonMateria = JSON.stringify( app.form.getMateria() );
-                
+
                 $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
                     //var resp = JSON.parse(resp);
                     //sconsole.log(resp)
 
 //                    if( resp.lastInsertId){
-//                        
+//
 //                    } else {
 //                        if( resp.erro != undefined){
 //                            ctrMsgErro.mostrar(resp.erro);
@@ -70,6 +89,7 @@ var app = {
 //                            ctrMsgErro.mostrar("ERRO:"+resp);
 //                        }
 //                    }
+                    app.lista.carregar();
                 });
             });
         },

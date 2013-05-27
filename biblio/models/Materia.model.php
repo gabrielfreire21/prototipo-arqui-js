@@ -158,16 +158,16 @@ class MateriaModel {
      *
      * @throws Exception
      */
-//    function deletar(){
-//
-//        $sql = "DELETE FROM materias WHERE id = {$this->id} LIMIT 1";
-//
-//        $result = Conn::getConexao()->query($sql);
-//        if(!$result){
-//            $err = Conn::getConexao()->errorInfo();
-//            throw new Exception($err[2], $err[1]);
-//        }
-//    }
+    function deletar(){
+
+        $sql = "DELETE FROM materias WHERE id = {$this->id} LIMIT 1";
+
+        $result = Conn::getConexao()->query($sql);
+        if(!$result){
+            $err = Conn::getConexao()->errorInfo();
+            throw new Exception($err[2], $err[1]);
+        }
+    }
 
 
     /**

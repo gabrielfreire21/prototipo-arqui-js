@@ -60,9 +60,12 @@ switch ($acao) {
         break;
 
     case "delete":
-        $id = isset($_POST['id']) ? $_POST['id'] : null ;
+        $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
+        $materia_request = stripslashes($materia_request);
+        $materia_request = json_decode($materia_request);        
+        
         $materia = new MateriaModel();
-        $materia->id = $id;
+        $materia->id = $materia_request->id;
         $materia->deletar();
         break;
 
