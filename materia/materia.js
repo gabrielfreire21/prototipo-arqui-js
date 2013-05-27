@@ -4,21 +4,7 @@ var app = {
         carregar: function() {
             $.post("materia/lista.php", "", function(retorno) {
                 app.elemConteudo.empty().append(retorno);
-                app.form.bindLinks();
-            });
-        }
-    }, // end lista
-    form: {
-        btnSalvar: {},
-        btnCancelar: {},
-        carregar: function(id) {
-            // Update ou insert
-            param = (id) ? "id=" + id : "";
-
-            $.post("materia/form.php", param, function(retorno) {
-                app.elemConteudo.empty().append(retorno);
-                app.form.setBtnSalvar();
-                app.form.setBtnCancelar();
+                app.lista.bindLinks();
             });
         },
         bindLinks: function() {
@@ -33,6 +19,20 @@ var app = {
                 $(this).click(function() {
                     app.form.carregar(id);
                 });
+            });
+        }                
+    }, // end lista
+    form: {
+        btnSalvar: {},
+        btnCancelar: {},
+        carregar: function(id) {
+            // Update ou insert
+            param = (id) ? "id=" + id : "";
+
+            $.post("materia/form.php", param, function(retorno) {
+                app.elemConteudo.empty().append(retorno);
+                app.form.setBtnSalvar();
+                app.form.setBtnCancelar();
             });
         },
         getMateria: function(){
@@ -59,7 +59,7 @@ var app = {
                 
                 $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
                     //var resp = JSON.parse(resp);
-                    console.log(resp)
+                    //sconsole.log(resp)
 
 //                    if( resp.lastInsertId){
 //                        

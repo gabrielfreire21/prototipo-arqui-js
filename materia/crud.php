@@ -41,7 +41,6 @@ switch ($acao) {
     case "update":
         $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
         $materia_request = stripslashes($materia_request);
-        $materia_request = utf8_encode($materia_request);
         $materia_request = json_decode($materia_request);
 
         $materia = new MateriaModel();
