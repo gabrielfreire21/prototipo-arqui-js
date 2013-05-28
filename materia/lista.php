@@ -7,7 +7,9 @@ $objMateria   = new MateriaModel();
 $arr_materias = $objMateria->getObjects();
 
 ?>
-<button type="button" class="btn btn-primary pull-right" >Inserir</button>
+
+<button type="button" class="btn btn-primary" id="lista-btn-inserir" 
+        style="margin: 10px; margin-left: 45%">Inserir</button>
 <table class="table">
 <tr>
     <th>id</th>

@@ -1,11 +1,13 @@
 var app = {
     elemConteudo: $('#conteudo'),
     lista: {
+        btnInserir: {},
         carregar: function() {
             $.post("materia/lista.php", "", function(retorno) {
                 app.elemConteudo.empty().append(retorno);
                 app.lista.linksForm();
                 app.lista.linksDel();
+                app.lista.setBtnInserir();
             });
         },
         linksForm: function() {
@@ -37,13 +39,18 @@ var app = {
                     });
                 });
             });
+        },
+        setBtnInserir: function() {
+            this.btnInserir = $('#lista-btn-inserir');
+            this.btnInserir.click(function() {
+                app.form.carregar();
+            });
         }
     }, // end lista
     form: {
         btnSalvar: {},
         btnCancelar: {},
         carregar: function(id) {
-            // Update ou insert
             param = (id) ? "id=" + id : "";
 
             $.post("materia/form.php", param, function(retorno) {
@@ -70,7 +77,7 @@ var app = {
             return materia;
         },
         setBtnSalvar: function() {
-            this.btnSalvar = $('#ctr-acao-salvar');
+            this.btnSalvar = $('#frm-btn-salvar');
             this.btnSalvar.click(function() {
                 var materia = app.form.getMateria();
                     strJsonMateria = JSON.stringify( materia );
@@ -87,7 +94,7 @@ var app = {
             });
         },
         setBtnCancelar: function() {
-            this.btnCancelar = $('#ctr-acao-cancelar');
+            this.btnCancelar = $('#frm-btn-cancelar');
             this.btnCancelar.click(function() {
                 app.lista.carregar();
             });
@@ -97,5 +104,3 @@ var app = {
 };//end materia
 
 app.lista.carregar();
-
-
