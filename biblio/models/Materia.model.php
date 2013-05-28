@@ -169,39 +169,6 @@ class MateriaModel {
         }
     }
 
-
-    /**
-     *
-     * @param type $where
-     * @return type
-     */
-//    static function total_registros($where=null) {
-//
-//        $sql  = "SELECT count(id) AS total FROM materias $where";
-//
-//        $res = Conn::getConexao()->query($sql)->fetch(PDO::FETCH_OBJ)->total;
-//
-//        return $res;
-//
-//    }
-
-
-    /**
-     * Retorna as palavras cheves conforme a seção
-     *
-     * @return type
-     */
-//    function getKeyWords(){
-//        switch ($this->secao) {
-//            case self::PHP:
-//                return KEYWORDS_PHP . $this->keywords;
-//                break;
-//            case self::JS:
-//                return KEYWORDS_JS . $this->keywords;
-//                break;
-//        }
-//    }
-
 }
 
 

@@ -9,7 +9,6 @@ var app = {
             });
         },
         linksForm: function() {
-            // Espera-se que "app.elemConteudo" seja a tabela (lista)
             var tabela = app.elemConteudo,
                 links  = tabela.find('a');
 
@@ -23,7 +22,6 @@ var app = {
             });
         },
         linksDel: function() {
-            // Espera-se que "app.elemConteudo" seja a tabela (lista)
             var tabela = app.elemConteudo,
                 links  = tabela.find('button');
 
@@ -77,18 +75,6 @@ var app = {
                 var strJsonMateria = JSON.stringify( app.form.getMateria() );
 
                 $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
-                    //var resp = JSON.parse(resp);
-                    //sconsole.log(resp)
-
-//                    if( resp.lastInsertId){
-//
-//                    } else {
-//                        if( resp.erro != undefined){
-//                            ctrMsgErro.mostrar(resp.erro);
-//                        } else {
-//                            ctrMsgErro.mostrar("ERRO:"+resp);
-//                        }
-//                    }
                     app.lista.carregar();
                 });
             });
