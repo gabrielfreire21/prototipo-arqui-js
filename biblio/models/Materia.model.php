@@ -81,37 +81,11 @@ class MateriaModel {
 
     }
 
+    
     /**
-     *
+     * 
      * @throws Exception
      */
-//    function inserir(){
-//
-//        $sql = "INSERT INTO materias"
-//                ."(id, url, titulo, resumo, keywords, nivel, secao, autor, dt_atualizacao, dt_criacao, ordem)"
-//                ." VALUES( "
-//                ."'".$this->id."', "
-//                ."'".$this->url."', "
-//                ."'".$this->titulo."' ,"
-//                ."'".$this->resumo."' ,"
-//                ."'".$this->keywords."', "
-//                ."'".$this->nivel."', "
-//                ."'".$this->secao."', "
-//                ."'".$this->autor."', "
-//                ."'".$this->dt_atualizacao."', "
-//                ."'".$this->dt_criacao."', "
-//                .$this->ordem.")";
-//        $result = Conn::getConexao()->query($sql);
-//        if(!$result){
-//            $err = Conn::getConexao()->errorInfo();
-//            throw new Exception($err[2], $err[1]);
-//        }
-//
-//        $this->id = Conn::getConexao()->lastInsertId();
-//
-//    }
-
-
     function validar(){
         if(!$this->id) throw new Exception("faltou-id");
         if(!$this->url) throw new Exception("faltou-url");
@@ -125,7 +99,39 @@ class MateriaModel {
         if(!$this->dt_criacao) throw new Exception("faltou-dt_criacao");
         if(!$this->ordem) throw new Exception("faltou-ordem");
     }
+    
+    
+    /**
+     *
+     * @throws Exception
+     */
+    function inserir(){
 
+        $sql = "INSERT INTO materias"
+                ."(id, url, titulo, resumo, keywords, nivel, secao, autor, dt_atualizacao, dt_criacao, ordem)"
+                ." VALUES( "
+                ."'null', "
+                ."'".$this->url."', "
+                ."'".$this->titulo."' ,"
+                ."'".$this->resumo."' ,"
+                ."'".$this->keywords."', "
+                ."'".$this->nivel."', "
+                ."'".$this->secao."', "
+                ."'".$this->autor."', "
+                ."'".$this->dt_atualizacao."', "
+                ."'".$this->dt_criacao."', "
+                .$this->ordem.")";
+        $result = Conn::getConexao()->query($sql);
+        if(!$result){
+            $err = Conn::getConexao()->errorInfo();
+            throw new Exception($err[2], $err[1]);
+        }
+
+        $this->id = Conn::getConexao()->lastInsertId();
+
+    }
+
+    
     /**
      *
      * @throws Exception

@@ -9,7 +9,7 @@ var app = {
             });
         },
         linksForm: function() {
-            var tabela = app.elemConteudo,
+            var tabela = app.elemConteudo.find('table'),
                 links  = tabela.find('a');
 
             links.each(function() {
@@ -22,7 +22,7 @@ var app = {
             });
         },
         linksDel: function() {
-            var tabela = app.elemConteudo,
+            var tabela = app.elemConteudo.find('table'),
                 links  = tabela.find('button');
 
             links.each(function() {
@@ -72,11 +72,18 @@ var app = {
         setBtnSalvar: function() {
             this.btnSalvar = $('#ctr-acao-salvar');
             this.btnSalvar.click(function() {
-                var strJsonMateria = JSON.stringify( app.form.getMateria() );
+                var materia = app.form.getMateria();
+                    strJsonMateria = JSON.stringify( materia );
 
-                $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
-                    app.lista.carregar();
-                });
+                if(materia.id){
+                    $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
+                        app.lista.carregar();
+                    });
+                }else{
+                    $.post("materia/crud.php", "ac=insert&materia="+strJsonMateria, function(resp){
+                        app.lista.carregar();
+                    });
+                }
             });
         },
         setBtnCancelar: function() {
