@@ -9,7 +9,7 @@ $arr_materias = $objMateria->getObjects();
 ?>
 
 <button type="button" class="btn btn-primary" id="lista-btn-inserir" 
-        style="margin: 10px; margin-left: 45%">Inserir</button>
+        style="margin: 10px; margin-left: 45%;">Inserir</button>
 <table class="table">
 <tr>
     <th>id</th>
@@ -30,7 +30,7 @@ $arr_materias = $objMateria->getObjects();
         <td><?php echo $materia->autor ?></td>
         <td><?php echo $materia->secao ?></td>
         <td><?php echo $materia->dt_atualizacao ?></td>
-        <td><button type="button" class="btn-fulia btn btn-danger btn-mini" >Excluir</button></td>
+        <td><button type="button" class="btn btn-danger btn-mini" >Excluir</button></td>
     </tr>
 <?php endforeach; ?>
 </table>

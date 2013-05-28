@@ -18,7 +18,8 @@ var app = {
                 var tr = $(this).parent().parent(),
                     id = tr.attr('id').split("-")[1];
 
-                $(this).click(function() {
+                $(this).click(function(event) {
+                    event.preventDefault();
                     app.form.carregar(id);
                 });
             });
@@ -32,7 +33,7 @@ var app = {
                     id = tr.attr('id').split("-")[1];
 
                 $(this).click(function() {
-                    if( confirm("Confirma deletar?")){
+                    if( confirm("Confirmar deletar?")){
                         var strJsonMateria = '{"id":"'+id+'"}';
 
                         $.post("materia/crud.php", "ac=delete&materia="+strJsonMateria, function(resp){
@@ -103,6 +104,6 @@ var app = {
         }
     }// end form
 
-};//end materia
+};//end matéria
 
 app.lista.carregar();
