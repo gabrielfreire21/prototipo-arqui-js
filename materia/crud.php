@@ -1,17 +1,43 @@
 <?php
+/**
+ * Este arquivo recebe as requisições ajax adivinda do módulo matéria
+ * 
+ * Recebemos a ação através da variável 'ac' e
+ * a matéria através da variável "materia"
+ * 
+ * A variável matéria sempre será um Json.
+ * 
+ */
+
+/*
+ * requires
+ */
 require "../biblio/classes/Conn.class.php";
 require "../biblio/models/Materia.model.php";
 
 
+/*
+ * Ação
+ */
 $acao = isset($_POST['ac']) ? $_POST['ac'] : null ;
 
+
+/**
+ * Executa a ação
+ */
 switch ($acao) {
 
+    /**
+     * Nâo estou utilizando esta ação
+     */
     case "select":
         $materias = MateriaModel::getObjects($where=null, $order="ORDER BY id");
         echo json_encode($materias);
         break;
 
+    /**
+     * Insert do formulário
+     */
     case "insert":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -37,6 +63,9 @@ switch ($acao) {
         }
         break;
 
+    /**
+     * Update do formulário
+     */
     case "update":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -62,6 +91,9 @@ switch ($acao) {
         }        
         break;
 
+    /**
+     * Deleta da lista
+     */
     case "delete":
         $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
         $materia_request = stripslashes($materia_request);

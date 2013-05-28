@@ -1,4 +1,10 @@
 <?php
+/**
+ * View da lista de matérias
+ * 
+ */
+
+
 require "../biblio/classes/Conn.class.php";
 require "../biblio/classes/HTMLcombo.php";
 require "../biblio/models/Materia.model.php";
@@ -7,7 +13,6 @@ $objMateria   = new MateriaModel();
 $arr_materias = $objMateria->getObjects();
 
 ?>
-
 <button type="button" class="btn btn-primary" id="lista-btn-inserir" 
         style="margin: 10px; margin-left: 45%;">Inserir</button>
 <table class="table">

@@ -1,8 +1,5 @@
 <?php
 /**
- *
- */
-/**
  * Classe responsável por reenderizar os options de uma combobox(caixa de seleção)
  *
  * Poderá ser utilizada de duas formas:
@@ -123,39 +120,4 @@ class HTMLcombo {
     }
 
 } # end class
-
-# Teste de implementação
-/*
-
-#  Com um array simples
-$arrCombo[2] = "desativar";
-$arrCombo[3] = "bloquear";
-$arrCombo[4] = "desbloquear";
-$arrCombo[5] = "deletar";
-
-$combo = new HTMLcombo();
-$combo->valor_selecionado = 3;
-echo $combo->getOptions($arrCombo);
-
-
-# Com um array multidimenssional
-$arrCombo = array();
-
-$arrCombo['secao_a']['label'] = "Seção A";
-$arrCombo['secao_a']['options'] = array();
-$arrCombo['secao_a']['options'] = array(1 => 'ativar', 2 => 'destivar');
-
-$arrCombo['secao_b']['label'] = "Seção B";
-$arrCombo['secao_b']['options'] = array();
-$arrCombo['secao_b']['options'] = array(3 => 'bloquear', 4 => 'desbloquear');
-
-$arrCombo['secao_c']['label'] = "Seção C";
-$arrCombo['secao_c']['options'] = array();
-$arrCombo['secao_c']['options'] = array(5 => 'deletar');
-
-$combo = new HTMLcombo();
-$combo->valor_selecionado = "5";
-echo $combo->getOptionsGroup($arrCombo);
-die();
-*/
 ?>

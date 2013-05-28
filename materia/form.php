@@ -1,16 +1,21 @@
 <?php
+/**
+ * View do formulário
+ */
+
 require "../biblio/classes/Conn.class.php";
 require "../biblio/classes/HTMLcombo.php";
 require "../biblio/models/Materia.model.php";
 
 
 /**
- * Insert
+ * Principalemnte para Insert
  */
 $objMateria = new MateriaModel();
 
+
 /**
- * Update
+ * Se for update...
  */
 if(isset($_POST['id'])){
     $objMateria->carregar($_POST['id']);

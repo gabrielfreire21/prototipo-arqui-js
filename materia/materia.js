@@ -1,5 +1,16 @@
 var app = {
+    
+    /**
+     * Div principal para mostrarmos o conteúdo
+     * @type type
+     */
     elemConteudo: $('#conteudo'),
+            
+            
+    /**
+     *  Lista, tabela de matérias
+     * @type type
+     */
     lista: {
         btnInserir: {},
         carregar: function() {
@@ -50,6 +61,14 @@ var app = {
             });
         }
     }, // end lista
+    
+    
+    
+    /**
+     * Formulário
+     * 
+     * @type type
+     */
     form: {
         btnSalvar: {},
         btnCancelar: {},
@@ -104,6 +123,10 @@ var app = {
         }
     }// end form
 
-};//end matéria
+};//end app
 
+
+/*
+ * Início da app.
+ */
 app.lista.carregar();

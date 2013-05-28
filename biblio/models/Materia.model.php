@@ -1,15 +1,9 @@
 <?php
 /**
- *
- */
-/**
- *
+ * Classe que representa nossa model do módulo "matéria"
+ * 
  */
 class MateriaModel {
-
-    const PHP      = "php";
-    const JS       = "js";
-    const HTML_CSS = "html-css";
 
     public $id;
     public $url;
@@ -58,6 +52,9 @@ class MateriaModel {
 
 
     /**
+     * Draft (favor ignorar)
+     * 
+     * Método não utilizado nesta versão
      *
      * @param type $where
      * @return type
@@ -83,6 +80,12 @@ class MateriaModel {
 
     
     /**
+     * Draft (favor ignorar)
+     * 
+     * Esse método não está sendo usado planamente.
+     * Ele ainda é um rascunho.
+     * 
+     * Pretendo utilizá-lo nas novas versões.
      * 
      * @throws Exception
      */
@@ -124,6 +127,7 @@ class MateriaModel {
                 ."'".$this->dt_criacao."', "
                 .$this->ordem.")";
         $result = Conn::getConexao()->query($sql);
+        
         if(!$result){
             $err = Conn::getConexao()->errorInfo();
             throw new Exception($err[2], $err[1]);
@@ -139,6 +143,7 @@ class MateriaModel {
      * @throws Exception
      */
     function update(){
+        
         $sql = "UPDATE materias "
                 ."SET "
 //                ."id = '".$this->id."', "
@@ -155,6 +160,7 @@ class MateriaModel {
                 ." WHERE id = ".$this->id;
 
         $result = Conn::getConexao()->query($sql);
+        
         if(!$result){
             $err = Conn::getConexao()->errorInfo();
             throw new Exception($err[2], $err[1]);
@@ -168,9 +174,9 @@ class MateriaModel {
      */
     function deletar(){
 
-        $sql = "DELETE FROM materias WHERE id = {$this->id} LIMIT 1";
-
+        $sql    = "DELETE FROM materias WHERE id = {$this->id} LIMIT 1";
         $result = Conn::getConexao()->query($sql);
+
         if(!$result){
             $err = Conn::getConexao()->errorInfo();
             throw new Exception($err[2], $err[1]);
@@ -178,20 +184,4 @@ class MateriaModel {
     }
 
 }
-
-
-
-/**
- * Teste
- */
-//require "../Conn.class.php";
-//$materia = new Materia();
-
-
-//$materia->carregar(6);
-//var_dump($materia);
-
-//$arr_materias = $materia->getObjects();
-//var_dump($arr_materias);
-
 ?>

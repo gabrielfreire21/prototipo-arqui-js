@@ -1,21 +1,20 @@
 <?php
 /**
- *
- */
-/**
- *
+ * 
+ * Singleton para conexão com DB
+ * 
  */
 abstract class Conn {
 
     /**
      *
-     * @var type
+     * @var type 
      */
     private static $conn;
 
     /**
      *
-     * @return \PDO
+     * @return type
      */
     static function getConexao() {
         $local   = "localhost";
@@ -33,12 +32,4 @@ abstract class Conn {
         return self::$conn;
     }
 }
-
-
-/**
- * Teste
- */
-//var_dump(Conn::getConexao());
-
-
 ?>
