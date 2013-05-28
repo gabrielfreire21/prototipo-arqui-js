@@ -20,7 +20,13 @@ Lições aprendidas
 Propositalmente, eu tentei ao máximo imitar o esquema natural, ou melhor, convencial de construção
 de uma aplicação web.
 
-Os registros são exibidos em uma listagem (table) onde é possível abrir o registro em um formulário
+Os registros são exibidos em uma listagem (table)...
+
+![tabela](/path/to/img.jpg "index")
+
+
+
+ onde é possível abrir o registro em um formulário
 ou deletar o registro na própria listagem.
 
 
