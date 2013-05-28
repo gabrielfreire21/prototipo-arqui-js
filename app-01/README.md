@@ -1,8 +1,8 @@
 Fulia
 ======
 
-Essa é a primeira aplicação, eu me base-ei na área administrativa
-do site devfuria.com.br e que eu chamo de "fulia".
+Essa é a primeira aplicação, eu me base-ei na área administrativa do site devfuria.com.br,
+que eu chamava (não existe mais) de "fulia".
 
 O que o software faz?
 ---
@@ -31,7 +31,7 @@ ou deletar o registro na própria listagem.
 ![formulário](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/primeira-app/app-01/biblio/segunda-tela.png "formulário")
 
 
-Observaçãoes:
+Observações:
 
 * As views estão muito inteligentes.
 * Os models não refletem nenhum padrão
