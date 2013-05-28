@@ -32,11 +32,13 @@ var app = {
                     id = tr.attr('id').split("-")[1];
 
                 $(this).click(function() {
-                    var strJsonMateria = '{"id":"'+id+'"}';
- 
-                    $.post("materia/crud.php", "ac=delete&materia="+strJsonMateria, function(resp){
-                        app.lista.carregar();
-                    });
+                    if( confirm("Confirma deletar?")){
+                        var strJsonMateria = '{"id":"'+id+'"}';
+
+                        $.post("materia/crud.php", "ac=delete&materia="+strJsonMateria, function(resp){
+                            app.lista.carregar();
+                        });                        
+                    }
                 });
             });
         },
