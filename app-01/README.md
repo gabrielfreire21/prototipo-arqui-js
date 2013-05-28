@@ -22,7 +22,7 @@ de uma aplicação web.
 
 Os registros são exibidos em uma listagem (table)...
 
-![tabela](https://github.com/flaviomicheletti/prototipo-arqui-js/blob/primeira-app/app-01/biblio/primeira-tela.png "lista")
+![tabela](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/primeira-app/app-01/biblio/primeira-tela.png "lista")
 
 
 ..onde é possível abrir o registro em um formulário
