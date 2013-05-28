@@ -31,7 +31,6 @@ switch ($acao) {
             $materia->dt_criacao     = $materia_request->dt_criacao;
             $materia->ordem          = $materia_request->ordem;
             $materia->inserir();
-            echo json_encode(array("lastInsertId" => $materia->id));
 
         } catch (Exception $exc) {
             echo json_encode(array("erro" => $exc->getMessage()));
@@ -39,24 +38,28 @@ switch ($acao) {
         break;
 
     case "update":
-        $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
-        $materia_request = stripslashes($materia_request);
-        $materia_request = json_decode($materia_request);
+        try {
+            $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
+            $materia_request = stripslashes($materia_request);
+            $materia_request = json_decode($materia_request);
 
-        $materia = new MateriaModel();
-        $materia->id             = $materia_request->id;
-        $materia->url            = $materia_request->url;
-        $materia->titulo         = $materia_request->titulo;
-        $materia->resumo         = $materia_request->resumo;
-        $materia->keywords       = $materia_request->keywords;
-        $materia->nivel          = $materia_request->nivel;
-        $materia->secao          = $materia_request->secao;
-        $materia->autor          = $materia_request->autor;
-        $materia->dt_atualizacao = $materia_request->dt_atualizacao;
-        $materia->dt_criacao     = $materia_request->dt_criacao;
-        $materia->ordem          = $materia_request->ordem;
-        //var_dump($materia);
-        $materia->update();
+            $materia = new MateriaModel();
+            $materia->id             = $materia_request->id;
+            $materia->url            = $materia_request->url;
+            $materia->titulo         = $materia_request->titulo;
+            $materia->resumo         = $materia_request->resumo;
+            $materia->keywords       = $materia_request->keywords;
+            $materia->nivel          = $materia_request->nivel;
+            $materia->secao          = $materia_request->secao;
+            $materia->autor          = $materia_request->autor;
+            $materia->dt_atualizacao = $materia_request->dt_atualizacao;
+            $materia->dt_criacao     = $materia_request->dt_criacao;
+            $materia->ordem          = $materia_request->ordem;
+            $materia->update();
+
+        } catch (Exception $exc) {
+            echo json_encode(array("erro" => $exc->getMessage()));
+        }        
         break;
 
     case "delete":
@@ -70,7 +73,4 @@ switch ($acao) {
         break;
 
 }
-
-
-
 ?>

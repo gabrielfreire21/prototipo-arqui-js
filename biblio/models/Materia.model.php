@@ -87,16 +87,16 @@ class MateriaModel {
      * @throws Exception
      */
     function validar(){
-        if(!$this->id) throw new Exception("faltou-id");
-        if(!$this->url) throw new Exception("faltou-url");
-        if(!$this->titulo) throw new Exception("faltou-titulo");
-        if(!$this->resumo) throw new Exception("faltou-resumo");
-        if(!$this->keywords) throw new Exception("faltou-keywords");
-        if(!$this->nivel) throw new Exception("faltou-nivel");
-        if(!$this->secao) throw new Exception("faltou-seção");
-        if(!$this->autor) throw new Exception("faltou-autor");
-        if(!$this->dt_atualizacao) throw new Exception("faltou-dt_atualizacao");
-        if(!$this->dt_criacao) throw new Exception("faltou-dt_criacao");
+//        if(!$this->id) throw new Exception("faltou-id");
+//        if(!$this->url) throw new Exception("faltou-url");
+//        if(!$this->titulo) throw new Exception("faltou-titulo");
+//        if(!$this->resumo) throw new Exception("faltou-resumo");
+//        if(!$this->keywords) throw new Exception("faltou-keywords");
+//        if(!$this->nivel) throw new Exception("faltou-nivel");
+//        if(!$this->secao) throw new Exception("faltou-seção");
+//        if(!$this->autor) throw new Exception("faltou-autor");
+//        if(!$this->dt_atualizacao) throw new Exception("faltou-dt_atualizacao");
+//        if(!$this->dt_criacao) throw new Exception("faltou-dt_criacao");
         if(!$this->ordem) throw new Exception("faltou-ordem");
     }
     
@@ -106,6 +106,8 @@ class MateriaModel {
      * @throws Exception
      */
     function inserir(){
+        
+        $this->validar();
 
         $sql = "INSERT INTO materias"
                 ."(id, url, titulo, resumo, keywords, nivel, secao, autor, dt_atualizacao, dt_criacao, ordem)"
