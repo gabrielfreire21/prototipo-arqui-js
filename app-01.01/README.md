@@ -1,7 +1,7 @@
 Fulia
 ======
 
-Essa é semelhante a aplicação anterior (app-01)
-só que estou utilizando o patter Active Record.
+Essa é semelhante a aplicação anterior (app-01) porém:
 
-Veja as alteraçõe na pasta /bilio/models/
+* renome-ei arquivos e métodos
+
