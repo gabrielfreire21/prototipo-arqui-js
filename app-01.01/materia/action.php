@@ -9,34 +9,22 @@
  * 
  */
 
-/**
- * boot
- */
+# boot
 require "../App.php";
 
-
-/*
- * Ação
- */
+# Ação
 $acao = isset($_POST['ac']) ? $_POST['ac'] : null ;
 
-
-/**
- * Executa a ação
- */
+# Executa a ação
 switch ($acao) {
 
-    /**
-     * Nâo estou utilizando esta ação
-     */
+    # Não estou utilizando esta ação
     case "select":
         $materias = MateriaModel::getObjects($where=null, $order="ORDER BY id");
         echo json_encode($materias);
         break;
 
-    /**
-     * Insert do formulário
-     */
+    # Insert do formulário
     case "insert":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -62,9 +50,7 @@ switch ($acao) {
         }
         break;
 
-    /**
-     * Update do formulário
-     */
+    # Update do formulário
     case "update":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -90,9 +76,7 @@ switch ($acao) {
         }        
         break;
 
-    /**
-     * Deleta da lista
-     */
+    # Deleta da lista
     case "delete":
         $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
         $materia_request = stripslashes($materia_request);

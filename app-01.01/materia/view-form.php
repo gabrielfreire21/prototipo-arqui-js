@@ -3,27 +3,17 @@
  * View do formulário
  */
 
-
-/**
- * boot
- */
+# boot
 require "../App.php";
 
-/**
- * Principalmente para Insert
- */
+# Principalmente para Insert
 $objMateria = new MateriaModel();
 
-
-/**
- * Se for update...
- */
-if(isset($_POST['id'])){
+# Se for update...
+if( isset($_POST['id']) ){
     $objMateria->id = $_POST['id'];
     $objMateria->getObject();
 }
-
-
 ?>
 <style type="text/css">
     .input-tamanho-padrao {

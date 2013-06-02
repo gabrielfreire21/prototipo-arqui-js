@@ -1,17 +1,12 @@
 <?php
 /**
  * View da lista de matérias
- * 
  */
 
-/**
- * boot
- */
+# boot
 require "../App.php";
 
-/**
- * 
- */
+# Carregar lista de registros
 $objMateria   = new MateriaModel();
 $arr_materias = $objMateria->getObjects();
 
