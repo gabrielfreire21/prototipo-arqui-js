@@ -9,11 +9,10 @@
  * 
  */
 
-/*
- * requires
+/**
+ * boot
  */
-require "../biblio/classes/Conn.class.php";
-require "../biblio/models/Materia.model.php";
+require "../App.php";
 
 
 /*

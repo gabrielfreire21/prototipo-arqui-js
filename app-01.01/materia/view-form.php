@@ -3,10 +3,11 @@
  * View do formulário
  */
 
-require "../biblio/classes/Conn.class.php";
-require "../biblio/classes/HTMLcombo.php";
-require "../biblio/models/Materia.model.php";
 
+/**
+ * boot
+ */
+require "../App.php";
 
 /**
  * Principalmente para Insert
