@@ -56,7 +56,7 @@ switch ($acao) {
             $materia->dt_atualizacao = $materia_request->dt_atualizacao;
             $materia->dt_criacao     = $materia_request->dt_criacao;
             $materia->ordem          = $materia_request->ordem;
-            $materia->inserir();
+            $materia->insert();
 
         } catch (Exception $exc) {
             echo json_encode(array("erro" => $exc->getMessage()));
@@ -101,7 +101,7 @@ switch ($acao) {
         
         $materia = new MateriaModel();
         $materia->id = $materia_request->id;
-        $materia->deletar();
+        $materia->delete();
         break;
 
 }
