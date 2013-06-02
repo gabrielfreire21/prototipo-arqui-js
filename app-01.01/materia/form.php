@@ -18,7 +18,7 @@ $objMateria = new MateriaModel();
  * Se for update...
  */
 if(isset($_POST['id'])){
-    $objMateria->carregar($_POST['id']);
+    $objMateria->getObject($_POST['id']);
 }
 
 

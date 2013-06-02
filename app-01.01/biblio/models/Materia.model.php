@@ -44,9 +44,7 @@ class MateriaModel {
 
     
     /**
-     * Draft (favor ignorar)
-     * 
-     * Método não utilizado nesta versão
+     * Para listar as matérias
      *
      * @param type $where
      * @return type
