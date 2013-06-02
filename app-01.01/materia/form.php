@@ -9,7 +9,7 @@ require "../biblio/models/Materia.model.php";
 
 
 /**
- * Principalemnte para Insert
+ * Principalmente para Insert
  */
 $objMateria = new MateriaModel();
 
@@ -18,7 +18,8 @@ $objMateria = new MateriaModel();
  * Se for update...
  */
 if(isset($_POST['id'])){
-    $objMateria->getObject($_POST['id']);
+    $objMateria->id = $_POST['id'];
+    $objMateria->getObject();
 }
 
 
