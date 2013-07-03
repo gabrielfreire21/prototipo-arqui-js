@@ -22,13 +22,13 @@ de uma aplicação web.
 
 Os registros são exibidos em uma listagem (table)...
 
-![tabela](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/primeira-app/app-01/biblio/primeira-tela.png "lista")
+![tabela](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/master/app-01/biblio/primeira-tela.png "lista")
 
 
 ..onde é possível abrir o registro em um formulário
 ou deletar o registro na própria listagem.
 
-![formulário](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/primeira-app/app-01/biblio/segunda-tela.png "formulário")
+![formulário](https://raw.github.com/flaviomicheletti/prototipo-arqui-js/master/app-01/biblio/segunda-tela.png "formulário")
 
 
 Observações:

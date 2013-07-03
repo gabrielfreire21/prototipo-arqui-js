@@ -3,25 +3,17 @@
  * View do formulário
  */
 
-require "../biblio/classes/Conn.class.php";
-require "../biblio/classes/HTMLcombo.php";
-require "../biblio/models/Materia.model.php";
+# boot
+require "../App.php";
 
-
-/**
- * Principalemnte para Insert
- */
+# Principalmente para Insert
 $objMateria = new MateriaModel();
 
-
-/**
- * Se for update...
- */
-if(isset($_POST['id'])){
-    $objMateria->carregar($_POST['id']);
+# Se for update...
+if( isset($_POST['id']) ){
+    $objMateria->id = $_POST['id'];
+    $objMateria->getObject();
 }
-
-
 ?>
 <style type="text/css">
     .input-tamanho-padrao {

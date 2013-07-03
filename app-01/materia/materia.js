@@ -14,7 +14,7 @@ var app = {
     lista: {
         btnInserir: {},
         carregar: function() {
-            $.post("materia/lista.php", "", function(retorno) {
+            $.post("materia/view-lista.php", "", function(retorno) {
                 app.elemConteudo.empty().append(retorno);
                 app.lista.linksForm();
                 app.lista.linksDel();
@@ -47,7 +47,7 @@ var app = {
                     if( confirm("Confirmar deletar?")){
                         var strJsonMateria = '{"id":"'+id+'"}';
 
-                        $.post("materia/crud.php", "ac=delete&materia="+strJsonMateria, function(resp){
+                        $.post("materia/action.php", "ac=delete&materia="+strJsonMateria, function(resp){
                             app.lista.carregar();
                         });                        
                     }
@@ -75,7 +75,7 @@ var app = {
         carregar: function(id) {
             param = (id) ? "id=" + id : "";
 
-            $.post("materia/form.php", param, function(retorno) {
+            $.post("materia/view-form.php", param, function(retorno) {
                 app.elemConteudo.empty().append(retorno);
                 app.form.setBtnSalvar();
                 app.form.setBtnCancelar();
@@ -105,11 +105,11 @@ var app = {
                     strJsonMateria = JSON.stringify( materia );
 
                 if(materia.id){
-                    $.post("materia/crud.php", "ac=update&materia="+strJsonMateria, function(resp){
+                    $.post("materia/action.php", "ac=update&materia="+strJsonMateria, function(resp){
                         app.lista.carregar();
                     });
                 }else{
-                    $.post("materia/crud.php", "ac=insert&materia="+strJsonMateria, function(resp){
+                    $.post("materia/action.php", "ac=insert&materia="+strJsonMateria, function(resp){
                         app.lista.carregar();
                     });
                 }
