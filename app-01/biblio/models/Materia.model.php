@@ -1,6 +1,8 @@
 <?php
 /**
- * Classe que representa nossa model do módulo "matéria"
+ * Classe que representa nossa model do módulo "matéria".
+ * 
+ * Com base em um active record (Oglio, Pablo Dall').
  * 
  */
 class MateriaModel {
@@ -17,22 +19,12 @@ class MateriaModel {
     public $dt_criacao;
     public $ordem;
 
-    /**
-     *
-     * @param type $id
-     */
-    function setId($id){
-        $this->id = $id;
-    }
-
 
     /**
      *
      * @param type $id
      */
-    function carregar($id) {
-
-        $this->setId($id);
+    function getObject() {
 
         $sql = "SELECT * FROM materias WHERE id = {$this->id}";
         $obj = Conn::getConexao()->query($sql)->fetch(PDO::FETCH_OBJ);
@@ -50,11 +42,9 @@ class MateriaModel {
         $this->ordem          = $obj->ordem;
     }
 
-
+    
     /**
-     * Draft (favor ignorar)
-     * 
-     * Método não utilizado nesta versão
+     * Para listar as matérias
      *
      * @param type $where
      * @return type
@@ -108,7 +98,7 @@ class MateriaModel {
      *
      * @throws Exception
      */
-    function inserir(){
+    function insert(){
         
         $this->validar();
 
@@ -172,7 +162,7 @@ class MateriaModel {
      *
      * @throws Exception
      */
-    function deletar(){
+    function delete(){
 
         $sql    = "DELETE FROM materias WHERE id = {$this->id} LIMIT 1";
         $result = Conn::getConexao()->query($sql);

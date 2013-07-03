@@ -9,35 +9,22 @@
  * 
  */
 
-/*
- * requires
- */
-require "../biblio/classes/Conn.class.php";
-require "../biblio/models/Materia.model.php";
+# boot
+require "../App.php";
 
-
-/*
- * Ação
- */
+# Ação
 $acao = isset($_POST['ac']) ? $_POST['ac'] : null ;
 
-
-/**
- * Executa a ação
- */
+# Executa a ação
 switch ($acao) {
 
-    /**
-     * Nâo estou utilizando esta ação
-     */
+    # Não estou utilizando esta ação
     case "select":
         $materias = MateriaModel::getObjects($where=null, $order="ORDER BY id");
         echo json_encode($materias);
         break;
 
-    /**
-     * Insert do formulário
-     */
+    # Insert do formulário
     case "insert":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -56,16 +43,14 @@ switch ($acao) {
             $materia->dt_atualizacao = $materia_request->dt_atualizacao;
             $materia->dt_criacao     = $materia_request->dt_criacao;
             $materia->ordem          = $materia_request->ordem;
-            $materia->inserir();
+            $materia->insert();
 
         } catch (Exception $exc) {
             echo json_encode(array("erro" => $exc->getMessage()));
         }
         break;
 
-    /**
-     * Update do formulário
-     */
+    # Update do formulário
     case "update":
         try {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
@@ -91,9 +76,7 @@ switch ($acao) {
         }        
         break;
 
-    /**
-     * Deleta da lista
-     */
+    # Deleta da lista
     case "delete":
         $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
         $materia_request = stripslashes($materia_request);
@@ -101,7 +84,7 @@ switch ($acao) {
         
         $materia = new MateriaModel();
         $materia->id = $materia_request->id;
-        $materia->deletar();
+        $materia->delete();
         break;
 
 }
