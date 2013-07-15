@@ -10,7 +10,7 @@
  * por meio das especificações de critérios,
  * 
  */
-final class ProdutosRepository {
+abstract class Repository {
 
 
     /*
@@ -56,11 +56,12 @@ final class ProdutosRepository {
      *
      *
      */
-    function load($criterio, $chave=null, $valor=null) {
+    function load($criterio=null, $chave=null, $valor=null) {
         // executa a consulta no banco de dados
-        $result= $conn->Query($sql.$criterio);
-        $results = array();
+        $sql = "SELECT * FROM $criterio";
+        $result= $conn->Query($sql);
 
+        $results = array();
         if ($result)
         {
             // armazena no array $results;
@@ -95,7 +96,8 @@ final class ProdutosRepository {
      */
     function delete($criterio) {
         // executa instrução de DELETE
-        $result = $conn->exec($sql.$criterio);
+        $sql = "DELETE FROM tabela $criterio";
+        $result = $conn->exec($sql);
         return $result;
     }
     
