@@ -1,11 +1,4 @@
-/**
- * 4.4.3 Active Record
- *
- * Parecido com o row data gateway só que esse pattern implementa métodos do modelo conceitual (lógica de negócios)
- *
- */
-
-
+<?php
 /*
  * Classe Produto, implementa Active Record.
  */
