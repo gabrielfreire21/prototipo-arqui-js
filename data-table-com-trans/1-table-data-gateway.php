@@ -52,7 +52,6 @@ class ProdutoGateway
                "'$object->estoque', '$object->preco_custo')";
     }
     
-
     function update(Produto $object)
     {
         $sql = "UPDATE produtos set ".
@@ -61,6 +60,11 @@ class ProdutoGateway
                "   preco_custo = '$object->preco_custo' ".
                "   WHERE id     = '$object->id'";
     }
+    
+    function delete($id)
+    {
+        $sql = "DELETE FROM produtos where id='$id'";
+    }    
     
     function getObject($id)
     {

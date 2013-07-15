@@ -26,7 +26,7 @@ class ProdutoGateway
                " VALUES ('$object->id', '$object->descricao', ".
                "'$object->estoque', '$object->preco_custo')";
     }
-    
+   
 
     function update($id, $descricao, $estoque, $preco_custo)
     {
@@ -36,8 +36,12 @@ class ProdutoGateway
                "   preco_custo = '$object->preco_custo' ".
                "   WHERE id     = '$object->id'";
     }
-    
 
+    function delete($id)
+    {
+        $sql = "DELETE FROM produtos where id='$id'";
+    }   
+    
     function getObject($id)
     {
         $sql = "SELECT * FROM produtos where id='$id'";
