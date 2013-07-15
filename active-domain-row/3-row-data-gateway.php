@@ -4,7 +4,7 @@
  * 4.4.2 - Row Data Gateway
  *
  * Um Row Data Gateway deve prover métodos que permitam construir um objeto e posteriormente
- * armazená-lo no bacno de dados, além de métodos estáticos que permitem carregar um objeto ou
+ * armazená-lo no banco de dados, além de métodos estáticos que permitem carregar um objeto ou
  * conjutno de objetos do banco de dados.
  *
  * Cada instância representa um registro diferente no banco de dados.
