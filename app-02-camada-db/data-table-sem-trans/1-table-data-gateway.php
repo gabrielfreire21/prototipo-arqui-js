@@ -23,18 +23,18 @@ class ProdutoGateway
     function insert($id, $descricao, $estoque, $preco_custo)
     {
         $sql = "INSERT INTO Produtos (id, descricao, estoque, preco_custo)" .
-               " VALUES ('$object->id', '$object->descricao', ".
-               "'$object->estoque', '$object->preco_custo')";
+               " VALUES ('$id', '$descricao', ".
+               "'$estoque', '$preco_custo')";
     }
    
 
     function update($id, $descricao, $estoque, $preco_custo)
     {
         $sql = "UPDATE produtos set ".
-               "   descricao    = '$object->descricao', " .
-               "   estoque      = '$object->estoque', ".
-               "   preco_custo = '$object->preco_custo' ".
-               "   WHERE id     = '$object->id'";
+               "   descricao    = '$descricao', " .
+               "   estoque      = '$estoque', ".
+               "   preco_custo = '$preco_custo' ".
+               "   WHERE id     = '$id'";
     }
 
     function delete($id)
