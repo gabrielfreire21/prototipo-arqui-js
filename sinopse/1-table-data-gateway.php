@@ -66,6 +66,8 @@ class ProdutoGateway
     function getObject($id)
     {
         $sql = "SELECT * FROM produtos where id='$id'";
+        $data = $result->fetch(PDO::FETCH_ASSOC);
+        return $data;
     }
 }
 
@@ -86,7 +88,6 @@ $gateway->insert($vinho);			// insere o objeto no banco de dados
 print_r($gateway->getObject(4));	// exibe o objeto de código 4
 
 $vinho->descricao = 'Vinho Cabernet';
-
 $gateway->update($vinho);			// atualiza o objeto no banco de dados
 print_r($gateway->getObject(4));	// exibe o objeto de código 4
 ?>
