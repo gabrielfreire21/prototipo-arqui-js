@@ -64,7 +64,7 @@ class ProdutoGateway
 /** 
  * Implementação
  */
-$vinho = new Produto;
+$vinho = new ProdutoGateway;
 $vinho->id           = 4;
 $vinho->descricao    = 'Vinho';
 $vinho->estoque      = 10;

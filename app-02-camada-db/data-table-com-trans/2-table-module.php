@@ -47,7 +47,7 @@ final class Produtos
 		$object = new Produto;
 		$object->id           = $arr_assoc['id'];
 		$object->descricao    = $arr_assoc['descricao'];
-		$object->estoque      += unidades; # <---
+		$object->estoque     += $unidades; # <---
 		$object->preco_custo  = $preco_custo; # <---
 
 		$gateway->update($object);
