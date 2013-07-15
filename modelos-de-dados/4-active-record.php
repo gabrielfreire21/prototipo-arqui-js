@@ -1,3 +1,4 @@
+<?php
 /**
  * 4.4.3 Active Record
  *
