@@ -30,38 +30,31 @@ final class Produtos
 {
     //static $recordset = array();
     
-    public function adicionar(Produto $object)
+    public function adicionar($id, $descricao, $estoque, $preco_custo)
     {
 		$gateway = new ProdutoGateway;
-		$gateway->insert($object);
+		$gateway->insert($id, $descricao, $estoque, $preco_custo);
     }
     
     public function registraCompra($id, $unidades, $preco_custo)
     {
 		$gateway = new ProdutoGateway;
-		$arr_assoc = $gateway->getObject($id);
+        $produto = $gateway->getObject($id);
 
-		$object = new Produto;
-		$object->id           = $arr_assoc['id'];
-		$object->descricao    = $arr_assoc['descricao'];
-		$object->estoque      += unidades; # <---
-		$object->preco_custo  = $preco_custo; # <---
-
-		$gateway->update($object);
+        $produto['estoque']     += $unidades;
+        $produto['preco_custo']  = $preco_custo;
+        
+		$gateway->update($produto['id'], $produto['descricao'], $produto['estoque'], $produto['preco_custo']);
     }
     
     public function registraVenda($id, $unidades)
     {
 		$gateway = new ProdutoGateway;
-		$arr_assoc = $gateway->getObject($id);
+        $produto = $gateway->getObject($id);
 
-		$object = new Produto;
-		$object->id           = $arr_assoc['id'];
-		$object->descricao    = $arr_assoc['descricao'];
-		$object->estoque      -= unidades;  # <---
-		$object->preco_custo  = $arr_assoc['preco_custo'];
-
-		$gateway->update($object);        
+        $produto['estoque']     -= $unidades;
+        
+		$gateway->update($produto['id'], $produto['descricao'], $produto['estoque'], $produto['preco_custo']);       
     }
     
     public function getEstoque($id)
@@ -85,24 +78,8 @@ final class Produtos
  * Implementação
  */
 $produtos = new Produtos;
-//$produtos->adicionar(1, 'Vinho', 10, 15);
-//$produtos->adicionar(2, 'Salame', 20, 20);
-
-$vinho = new Produto;
-$vinho->id           = 1;
-$vinho->descricao    = 'Vinho';
-$vinho->estoque      = 10;
-$vinho->preco_custo  = 15;
-$produtos->adicionar($vinho);
-
-$salame = new Produto;
-$salame->id           = 2;
-$salame->descricao    = 'Salame';
-$salame->estoque      = 20;
-$salame->preco_custo  = 20;
-$produtos->adicionar($salame);
-
-
+$produtos->adicionar(1, 'Vinho', 10, 15);
+$produtos->adicionar(2, 'Salame', 20, 20);
 
 echo "estoques: <br>\n";
 echo $produtos->getEstoque(1) . "<br>\n";
