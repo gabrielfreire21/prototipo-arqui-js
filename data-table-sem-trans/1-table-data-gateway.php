@@ -1,30 +1,5 @@
 <?php
 /**
- * 4.4.1 - Table Data Gateway com Data Transfer Object
- * 
- * É um objeto simples, sem relacionamentos como associações, agregações ou heranças,
- * utilizado apenas como estrutura para o transporte entre uma camada de método e outra.
- *
- * (Oglio, Pablo Dall')
- *
- */
-
-
-/**
- * Esse é o Data Transfer Object
- */
-class Produto
-{
-    public $id;
-    public $descricao;
-    public $estoque;
-    public $preco_custo;
-}
-
-
-
-
-/**
  * 4.4.1 - Table Data Gateway
  *
  * Interface de comunicação com o banco de dados que permite as operações do CRUD.
@@ -45,7 +20,7 @@ class Produto
 class ProdutoGateway
 {
 
-    function insert(Produto $object)
+    function insert($id, $descricao, $estoque, $preco_custo)
     {
         $sql = "INSERT INTO Produtos (id, descricao, estoque, preco_custo)" .
                " VALUES ('$object->id', '$object->descricao', ".
@@ -53,7 +28,7 @@ class ProdutoGateway
     }
     
 
-    function update(Produto $object)
+    function update($id, $descricao, $estoque, $preco_custo)
     {
         $sql = "UPDATE produtos set ".
                "   descricao    = '$object->descricao', " .
@@ -69,6 +44,15 @@ class ProdutoGateway
         $data = $result->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
+    
+    function getObjects($criterios)
+    {
+        $sql = "SELECT * FROM produtos WHERE $criterios";
+        $data = $result->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }    
+    
+    
 }
 
 

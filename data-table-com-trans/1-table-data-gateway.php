@@ -62,13 +62,19 @@ class ProdutoGateway
                "   WHERE id     = '$object->id'";
     }
     
-
     function getObject($id)
     {
         $sql = "SELECT * FROM produtos where id='$id'";
         $data = $result->fetch(PDO::FETCH_ASSOC);
         return $data;
     }
+    
+    function getObjects($criterios)
+    {
+        $sql = "SELECT * FROM produtos WHERE $criterios";
+        $data = $result->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }      
 }
 
 
