@@ -30,6 +30,9 @@ final class Produtos
 {
     //static $recordset = array();
     
+    /**
+     * exemplo de data trasnfer FORA
+     */
     public function adicionar(Produto $object)
     {
 		$gateway = new ProdutoGateway;
