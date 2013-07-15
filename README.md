@@ -24,11 +24,3 @@ Premissas
 e não encontrar dificuldades para entendê-lo.
 6. Não será utilizado nenhum framework JS.
 7. Bibliotecas estão liberadas. Ex: Jquery, Bootstrap.
-
-
-Participam desse projeto
----
-
-* https://github.com/flaviomicheletti
-* https://github.com/gabrielfreire
-* https://github.com/letypbarbosa
