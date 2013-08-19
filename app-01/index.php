@@ -7,28 +7,28 @@
         <link href="biblio/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        
+
         <div class="container">
             <div class="row">
-                
+
                 <!-- Esta div será o local onde as coisas "acontecem"-->
                 <div class="span12" id="conteudo"></div>
-                
+
             </div>
         </div>
-        
+
     </body>
-    
-    
+
+
     <!-- CDN da jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 
-    
+
     <!-- twiter-bootstrap JS -->
     <script src="biblio/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
-    
-    
+
+
     <!-- PONTO PRINCIPAL
     Aqui deveríamos chamar o JS da aplicação.
     
@@ -39,5 +39,7 @@
     apartir dele chamar os demais módulos.
     -->
     <script src="materia/materia.js" type="text/javascript"></script>
-    
+    <script type="text/javascript">
+        app.lista.carregar();
+    </script>
 </html>

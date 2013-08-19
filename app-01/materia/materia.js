@@ -124,9 +124,3 @@ var app = {
     }// end form
 
 };//end app
-
-
-/*
- * Início da app.
- */
-app.lista.carregar();
