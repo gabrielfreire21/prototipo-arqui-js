@@ -26,6 +26,10 @@ require BASE_PATH . "/biblio/classes/HTMLcombo.php";
 /**
  * Classes diversas
  */
-require BASE_PATH . "/biblio/models/Materia.model.php";
+require BASE_PATH . "/biblio/models/MateriaDataTransfer.php";
+require BASE_PATH . "/biblio/models/MateriasTableGateway.php";
+require BASE_PATH . "/biblio/models/MateriasTableModule.php";
+
+
 
 ?>

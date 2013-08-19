@@ -7,12 +7,11 @@
 require "../App.php";
 
 # Principalmente para Insert
-$objMateria = new MateriaModel();
+$objMateria = new MateriasTableModule();
 
 # Se for update...
 if( isset($_POST['id']) ){
-    $objMateria->id = $_POST['id'];
-    $objMateria->getObject();
+    $materia = $objMateria->getObject($_POST['id']);
 }
 ?>
 <style type="text/css">
@@ -41,7 +40,7 @@ if( isset($_POST['id']) ){
     <div class="control-group">
         <label class="control-label" for="frm-id">id</label>
         <div class="controls">
-            <input type="text" id="frm-id" class="span1 centralizar-texto"  value="<?php echo $objMateria->id ?>"/>
+            <input type="text" id="frm-id" class="span1 centralizar-texto"  value="<?php echo $materia->id ?>"/>
         </div>
     </div>
     <div class="control-group">
@@ -49,26 +48,26 @@ if( isset($_POST['id']) ){
         <div class="controls">
             <div class="input-prepend">
                 <span class="add-on">www.devfuria.com.br/</span>
-                <input type="text" id="frm-url" style="width: 590px" value="<?php echo $objMateria->url ?>"/>
+                <input type="text" id="frm-url" style="width: 590px" value="<?php echo $materia->url ?>"/>
             </div>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="frm-titulo">Título</label>
         <div class="controls">
-            <input id="frm-titulo" type="text" class="input-tamanho-padrao" value="<?php echo $objMateria->titulo ?>"/>
+            <input id="frm-titulo" type="text" class="input-tamanho-padrao" value="<?php echo $materia->titulo ?>"/>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="frm-resumo">Resumo</label>
         <div class="controls">
-            <textarea rows="6" id="frm-resumo" class="input-tamanho-padrao"><?php echo $objMateria->resumo ?></textarea>
+            <textarea rows="6" id="frm-resumo" class="input-tamanho-padrao"><?php echo $materia->resumo ?></textarea>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="frm-keywords">Keywords</label>
         <div class="controls">
-            <textarea rows="3" id="frm-keywords" class="input-tamanho-padrao"><?php echo $objMateria->keywords ?></textarea>
+            <textarea rows="3" id="frm-keywords" class="input-tamanho-padrao"><?php echo $materia->keywords ?></textarea>
         </div>
     </div>
     <div class="control-group">
@@ -77,7 +76,7 @@ if( isset($_POST['id']) ){
             <select id="frm-nivel">
                 <?php
                 $combo = new HTMLcombo();
-                $combo->valor_selecionado = $objMateria->nivel;
+                $combo->valor_selecionado = $materia->nivel;
                 $arrNivel = array(
 					"" => "",
                     "basico" => "Básico",
@@ -95,7 +94,7 @@ if( isset($_POST['id']) ){
             <select id="frm-secao" >
                 <?php
                 $combo = new HTMLcombo();
-                $combo->valor_selecionado = $objMateria->secao;
+                $combo->valor_selecionado = $materia->secao;
                 $arrSecao = array(
 					"" => "",
                     "php" => "PHP",
@@ -113,7 +112,7 @@ if( isset($_POST['id']) ){
             <select id="frm-autor">
                 <?php
                 $combo = new HTMLcombo();
-                $combo->valor_selecionado = $objMateria->autor;
+                $combo->valor_selecionado = $materia->autor;
                 $arrSecao = array(
 					"" => "",
                     "flavio" => "Flávio",
@@ -128,20 +127,20 @@ if( isset($_POST['id']) ){
     <div class="control-group">
         <label class="control-label" for="frm-dt-criacao">Data de criação</label>
         <div class="controls">
-            <input type="text" id="frm-dt-criacao" class="span2 centralizar-texto" value="<?php echo $objMateria->dt_criacao ?>"/>
+            <input type="text" id="frm-dt-criacao" class="span2 centralizar-texto" value="<?php echo $materia->dt_criacao ?>"/>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="frm-dt-atualizacao">Data de atualização</label>
         <div class="controls">
-            <input type="text" id="frm-dt-atualizacao" class="span2 centralizar-texto" value="<?php echo $objMateria->dt_atualizacao ?>" />
+            <input type="text" id="frm-dt-atualizacao" class="span2 centralizar-texto" value="<?php echo $materia->dt_atualizacao ?>" />
             <div id="datepicker"></div>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="frm-ordem">Ordem</label>
         <div class="controls">
-            <input type="text" id="frm-ordem" class="span1 centralizar-texto" value="<?php echo $objMateria->ordem ?>"/>
+            <input type="text" id="frm-ordem" class="span1 centralizar-texto" value="<?php echo $materia->ordem ?>"/>
         </div>
     </div>
     <div class="control-group">

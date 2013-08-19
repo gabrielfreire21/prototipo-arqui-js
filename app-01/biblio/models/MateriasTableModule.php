@@ -6,7 +6,7 @@
 /**
  *
  */
-class MateriaTableModelue {
+class MateriasTableModule {
 
 
     /**
@@ -83,7 +83,7 @@ class MateriaTableModelue {
      * @param null $order
      * @return type
      */
-    function getObjects($where=null, $order=null) {
+    static function getObjects($where=null, $order=null) {
 
         $materias = array();
         
