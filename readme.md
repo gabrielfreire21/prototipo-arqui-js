@@ -13,6 +13,7 @@ Começar a  desenvolver a aplicação pelo JS
 e somente depois finalizar com a linguagem de servidor
 (em nosso caso utilizaremos PHP).
 
+
 Premissas
 --
 
@@ -24,3 +25,10 @@ Premissas
 e não encontrar dificuldades para entendê-lo.
 6. Não será utilizado nenhum framework JS.
 7. Bibliotecas estão liberadas. Ex: Jquery, Bootstrap.
+
+
+
+Demo
+---
+
+http://www.devfuria.com.br/fulia/

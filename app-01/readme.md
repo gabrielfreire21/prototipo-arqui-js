@@ -4,6 +4,7 @@ Fulia
 Essa é a primeira aplicação, eu me base-ei na área administrativa do site devfuria.com.br,
 que eu chamava (não existe mais) de "fulia".
 
+
 O que o software faz?
 ---
 
@@ -92,3 +93,4 @@ A estrutura e os dados da nossa única tabela vem a seguir:
     (12, 'html-css/basico/primeiro-html/', 'Criando nosso primeiro HTML', 'O site csszengarden.com é notório por seus esforços em promover e divulgar o poder do CSS unido a um bom HTML. Ele tráz uma proposta interessante: criaram um HTML básico, porém bem formado, válido e desafiaram designers solcitando que o estilizassem sem "tocar" no HTML. Em outras palavras, o designer poderá utiliar o tema/estilo que quiser, mas não poderá jamais alterar o HTML e sua estrutura', 'primeiro html', 'basico', 'html-css', 'alexandre', '2013-04-12', '2013-04-12', 4),
     (13, 'php/basico/debugando/', 'Debugando (depurando)', 'Debugar é um esforço para encontrar determinado ponto (às vezes vários pontos) defeituoso no código para que seja corrigido.', 'debugando; depurando; var_dump; var_dump(); x-debug; X-debug; print_r; tags pre; pre', 'basico', 'php', 'alexandre', '2013-04-10', '2013-04-10', 7),
     (14, 'js/basico/debugando/', 'Debugando (depurando)', 'Precisamos debugar o programa para sabermos onde [e como] está ocorrendo o erro. Essa frase faz parte do dia a dia do desenvolvedor e, não raro, ela tira o sono de muita gente.', 'debugando; depurando; debugando js; depurando jsfirebug;', 'basico', 'js', 'alexandre', '2013-04-10', '2013-04-10', 3);
+
