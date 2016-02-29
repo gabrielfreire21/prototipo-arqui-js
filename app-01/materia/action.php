@@ -20,7 +20,7 @@ switch ($acao) {
 
     # Não estou utilizando esta ação
     case "select":
-        $materias = MateriaModel::getObjects($where=null, $order="ORDER BY id");
+        $materias = MateriasTableModule::getObjects($where=null, $order="ORDER BY id");
         echo json_encode($materias);
         break;
 
@@ -31,7 +31,7 @@ switch ($acao) {
             $materia_request = stripslashes($materia_request);
             $materia_request = json_decode($materia_request);
 
-            $materia = new MateriaModel();
+            $materia = new MateriaDataTransfer();
             $materia->id             = $materia_request->id;
             $materia->url            = $materia_request->url;
             $materia->titulo         = $materia_request->titulo;
@@ -43,7 +43,9 @@ switch ($acao) {
             $materia->dt_atualizacao = $materia_request->dt_atualizacao;
             $materia->dt_criacao     = $materia_request->dt_criacao;
             $materia->ordem          = $materia_request->ordem;
-            $materia->insert();
+            
+            $materias = new MateriasTableModule();
+            $materias->adicionar($materia);
 
         } catch (Exception $exc) {
             echo json_encode(array("erro" => $exc->getMessage()));
@@ -56,8 +58,8 @@ switch ($acao) {
             $materia_request = isset($_POST['materia']) ? $_POST['materia'] : null ;
             $materia_request = stripslashes($materia_request);
             $materia_request = json_decode($materia_request);
-
-            $materia = new MateriaModel();
+            
+            $materia = new MateriaDataTransfer();
             $materia->id             = $materia_request->id;
             $materia->url            = $materia_request->url;
             $materia->titulo         = $materia_request->titulo;
@@ -69,7 +71,9 @@ switch ($acao) {
             $materia->dt_atualizacao = $materia_request->dt_atualizacao;
             $materia->dt_criacao     = $materia_request->dt_criacao;
             $materia->ordem          = $materia_request->ordem;
-            $materia->update();
+            
+            $materias = new MateriasTableModule();
+            $materias->atualizar($materia);
 
         } catch (Exception $exc) {
             echo json_encode(array("erro" => $exc->getMessage()));
@@ -82,9 +86,8 @@ switch ($acao) {
         $materia_request = stripslashes($materia_request);
         $materia_request = json_decode($materia_request);        
         
-        $materia = new MateriaModel();
-        $materia->id = $materia_request->id;
-        $materia->delete();
+        $materia = new MateriasTableModule();
+        $materia->excluir($materia_request->id);
         break;
 
 }

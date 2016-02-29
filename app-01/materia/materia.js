@@ -73,7 +73,7 @@ var app = {
         btnSalvar: {},
         btnCancelar: {},
         carregar: function(id) {
-            param = (id) ? "id=" + id : "";
+            var param = (id) ? "id=" + id : "";
 
             $.post("materia/view-form.php", param, function(retorno) {
                 app.elemConteudo.empty().append(retorno);
@@ -101,7 +101,7 @@ var app = {
         setBtnSalvar: function() {
             this.btnSalvar = $('#frm-btn-salvar');
             this.btnSalvar.click(function() {
-                var materia = app.form.getMateria();
+                var materia = app.form.getMateria(),
                     strJsonMateria = JSON.stringify( materia );
 
                 if(materia.id){
@@ -124,9 +124,3 @@ var app = {
     }// end form
 
 };//end app
-
-
-/*
- * Início da app.
- */
-app.lista.carregar();

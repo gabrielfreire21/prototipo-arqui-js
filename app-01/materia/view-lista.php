@@ -7,8 +7,7 @@
 require "../App.php";
 
 # Carregar lista de registros
-$objMateria   = new MateriaModel();
-$arr_materias = $objMateria->getObjects();
+$arr_materias = MateriasTableModule::getObjects();
 
 ?>
 <button type="button" class="btn btn-primary" id="lista-btn-inserir" 
