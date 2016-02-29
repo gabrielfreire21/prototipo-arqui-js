@@ -1,24 +1,22 @@
-Protótipo experimental de arquitetura de aplicação web escrita principalmente em JS
+Protótipo experimental
 ===
 
 
-Trata-se de um projeto de estudo para prova de conceito
-de arquitetura de aplicação web.
+Trata-se de um projeto experimental de arquitetura de aplicação web escrita principalmente em JS
 
 
 O conceito
 ---
 
-Começar a  desenvolver a aplicação pelo JS
-e somente depois finalizar com a linguagem de servidor
-(em nosso caso utilizaremos PHP).
+Começar a  desenvolver a aplicação pelo JS e somente depois finalizar com a linguagem de servidor.
+
 
 
 Premissas
---
+---
 
 1. Utilizar o máximo de JS e o mínimo de linguagem de servidor.
-2. A linguagem utilizada no servidor poderá ser trocada sem prejuío da apliacação JS.
+2. A linguagem utilizada no servidor poderá ser trocada sem prejuízo da apliacação JS.
 3. A complexidade da interface (do usuário) deve ficar a cargo do JS.
 4. A segurança da aplicação deve ser observada.
 5. A codificação deve se manter extremamente simples. Um iniciante deve olhar para o código fonte
@@ -31,4 +29,4 @@ e não encontrar dificuldades para entendê-lo.
 Demo
 ---
 
-http://www.devfuria.com.br/fulia/
+http://www.fulia.devfuria.com.br/
